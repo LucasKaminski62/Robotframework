@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230505 15:19:21.246" rpa="false" schemaversion="3">
+<suite id="s1" name="Robotframework" source="C:\RobotFramework\Robotframework">
+<suite id="s1-s1" name="Tests" source="C:\RobotFramework\Robotframework\tests">
+<suite id="s1-s1-s1" name="Test4" source="C:\RobotFramework\Robotframework\tests\test4.robot">
+<test id="s1-s1-s1-t1" name="Test With Run Keyword" line="29">
+<kw name="Browser Init" library="homepage">
+<arg>${amazon}</arg>
+<doc>Ouvrir le navigateur</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230505 15:19:21.580" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.fr/'.</msg>
+<status status="PASS" starttime="20230505 15:19:21.578" endtime="20230505 15:19:24.357"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230505 15:19:24.357" endtime="20230505 15:19:24.504"/>
+</kw>
+<status status="PASS" starttime="20230505 15:19:21.578" endtime="20230505 15:19:24.505"/>
+</kw>
+<kw name="Accept Cookies" library="homepage">
+<doc>Accepter les cookies</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=sp-cc-accept</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:24.506" level="INFO">Clicking element 'id=sp-cc-accept'.</msg>
+<status status="PASS" starttime="20230505 15:19:24.506" endtime="20230505 15:19:24.786"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>id=sp-cc-accept</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20230505 15:19:24.786" endtime="20230505 15:19:24.799"/>
+</kw>
+<status status="PASS" starttime="20230505 15:19:24.505" endtime="20230505 15:19:24.800"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${var}</var>
+<arg>Wait Until Element Contains</arg>
+<arg>id=nav-link-accountList-nav-line-1</arg>
+<arg>Bonjour, Identifiez-vous</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>id=nav-link-accountList-nav-line-1</arg>
+<arg>Bonjour, Identifiez-vous</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230505 15:19:24.800" endtime="20230505 15:19:24.820"/>
+</kw>
+<msg timestamp="20230505 15:19:24.820" level="INFO">${var} = True</msg>
+<status status="PASS" starttime="20230505 15:19:24.800" endtime="20230505 15:19:24.822"/>
+</kw>
+<if>
+<branch type="IF" condition="${var}">
+<kw name="Go To Login" library="connexion">
+<doc>Aller sur page de connexion</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>id=nav-link-accountList</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230505 15:19:24.824" level="INFO">Simulating Mouse Over on element 'id=nav-link-accountList'.</msg>
+<status status="PASS" starttime="20230505 15:19:24.823" endtime="20230505 15:19:25.119"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=nav-flyout-ya-signin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:25.120" level="INFO">Clicking element 'id=nav-flyout-ya-signin'.</msg>
+<status status="PASS" starttime="20230505 15:19:25.120" endtime="20230505 15:19:25.833"/>
+</kw>
+<status status="PASS" starttime="20230505 15:19:24.823" endtime="20230505 15:19:25.833"/>
+</kw>
+<kw name="Login" library="connexion">
+<arg>${Dict['mail']}</arg>
+<arg>${Dict['mdp']}</arg>
+<arg>${Dict['nom']}</arg>
+<doc>Se connecter</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=ap_email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230505 15:19:25.836" endtime="20230505 15:19:25.867"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:25.868" level="INFO">Typing text 'damien.automatisation@gmail.com' into text field 'id=ap_email'.</msg>
+<status status="PASS" starttime="20230505 15:19:25.867" endtime="20230505 15:19:25.984"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=continue</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:25.985" level="INFO">Clicking element 'id=continue'.</msg>
+<status status="PASS" starttime="20230505 15:19:25.984" endtime="20230505 15:19:26.684"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=ap_password</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230505 15:19:26.684" endtime="20230505 15:19:26.715"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ap_password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:26.716" level="INFO">Typing text 'Aa123456!' into text field 'id=ap_password'.</msg>
+<status status="PASS" starttime="20230505 15:19:26.715" endtime="20230505 15:19:26.792"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=signInSubmit</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230505 15:19:26.794" level="INFO">Clicking element 'id=signInSubmit'.</msg>
+<status status="PASS" starttime="20230505 15:19:26.792" endtime="20230505 15:19:26.889"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>id=nav-link-accountList</arg>
+<arg>${name}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230505 15:19:26.889" endtime="20230505 15:19:28.818"/>
+</kw>
+<status status="PASS" starttime="20230505 15:19:25.834" endtime="20230505 15:19:28.819"/>
+</kw>
+<status status="PASS" starttime="20230505 15:19:24.823" endtime="20230505 15:19:28.819"/>
+</branch>
+<status status="PASS" starttime="20230505 15:19:24.823" endtime="20230505 15:19:28.819"/>
+</if>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230505 15:19:28.819" endtime="20230505 15:19:35.083"/>
+</kw>
+<doc>Connect if nobody connected</doc>
+<status status="PASS" starttime="20230505 15:19:21.576" endtime="20230505 15:19:35.084"/>
+</test>
+<doc>Test Amazon</doc>
+<status status="PASS" starttime="20230505 15:19:21.306" endtime="20230505 15:19:35.088"/>
+</suite>
+<status status="PASS" starttime="20230505 15:19:21.303" endtime="20230505 15:19:35.092"/>
+</suite>
+<status status="PASS" starttime="20230505 15:19:21.252" endtime="20230505 15:19:35.096"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robotframework">Robotframework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Robotframework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test4">Robotframework.Tests.Test4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
